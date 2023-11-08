@@ -1,0 +1,135 @@
+contacts = {}
+
+def add_contact():
+    name = input("Enter the contact's name: ")
+    phone = input("Enter the contact's phone number: ")
+    email = input("Enter the contact's email address: ")
+    contacts[name] = {"phone": phone, "email": email}
+    print(f"Contact '{name}' added successfully!")
+
+def view_contact(name):
+    if name in contacts:
+        contact = contacts[name]
+        print(f"Name: {name}")
+        print(f"Phone: {contact['phone']}")
+        print(f"Email: {contact['email']}")
+    else:
+        print(f"Contact '{name}' not found.")
+
+def list_contacts():
+    if not contacts:
+        print("No contacts in the contact book.")
+    else:
+        print("Contacts in the contact book:")
+        for name in contacts:
+            print(name)
+
+while True:
+    print("\nContact Book Menu:")
+    print("1. Add a contact")
+    print("2. View a contact")
+    print("3. List all contacts")
+    print("4. Quit")
+    
+    choice = input("Enter your choice (1/2/3/4): ")
+    
+    if choice == "1":
+        add_contact()
+    elif choice == "2":
+        name = input("Enter the name of the contact you want to view: ")
+        view_contact(name)
+    elif choice == "3":
+        list_contacts()
+    elif choice == "4":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please select 1, 2, 3, or 4.")
+
+Output:
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 1
+Enter the contact's name: sai
+Enter the contact's phone number: 123452563616
+Enter the contact's email address: sai@gmail.com
+Contact 'sai' added successfully!
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 2
+Enter the name of the contact you want to view: sai
+Name: sai
+Phone: 123452563616
+Email: sai@gmail.com
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 3
+Contacts in the contact book:
+sai
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): sai
+Invalid choice. Please select 1, 2, 3, or 4.
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 3
+Contacts in the contact book:
+sai
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 1
+Enter the contact's name: sai
+Enter the contact's phone number: 456123789
+Enter the contact's email address: krish@gmail.com
+Contact 'sai' added successfully!
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 2
+Enter the name of the contact you want to view: sai
+Name: sai
+Phone: 456123789
+Email: krish@gmail.com
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 3
+Contacts in the contact book:
+sai
+
+Contact Book Menu:
+1. Add a contact
+2. View a contact
+3. List all contacts
+4. Quit
+Enter your choice (1/2/3/4): 4
+Goodbye!
